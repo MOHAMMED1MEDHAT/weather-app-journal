@@ -6,9 +6,11 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 let baseUrl="https://api.openweathermap.org/data/2.5/weather?zip=";
 let apiKey="&appid=fec1ab7764243ae3f4ea7366ba0e5322";
 let query="";
+let feel="";
 
 document.querySelector(".rectangle-5-1").addEventListener("click",(e)=>{
     query=document.getElementById("zip").value;
+    feel=document.getElementById("feeling").value;
     setTimeout(viewData(),3000);
     console.log("generated");
     console.log(`zip code is :${query}`);
@@ -17,7 +19,8 @@ document.querySelector(".rectangle-5-1").addEventListener("click",(e)=>{
 function drawWeather(data,newDate) {
 	var celsius = Math.round(parseFloat(data.main.temp)-273.15);
 	var fahrenheit = Math.round(((parseFloat(data.main.temp)-273.15)*1.8)+32);
-	document.getElementById('description').innerHTML = data.weather[0].description;
+    document.getElementById('description').innerHTML = data.weather[0].description;
+    document.getElementById('content').innerHTML = feel;
 	document.getElementById('temp').innerHTML = celsius + '&deg;';
 	document.getElementById('location').innerHTML = data.name;
 	document.getElementById('Date').innerHTML =newDate;

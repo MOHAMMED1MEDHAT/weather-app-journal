@@ -3,7 +3,7 @@
 body{
   background-image: url("pexels-pixabay-209831.jpg");
 }
-#weather{
+#entryHolder{
   text-align: center;
   align-items: center;
   width: 100%;
@@ -140,7 +140,7 @@ input:focus {
   outline: none;
 }
 
-.rectangle-2-1 {
+.feelings {
   -webkit-backdrop-filter: blur(4px) brightness(100%);
   backdrop-filter: blur(4px) brightness(100%);
   background-color: var(--alto);
